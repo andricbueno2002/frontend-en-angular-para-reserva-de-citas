@@ -1,0 +1,60 @@
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            Bienvenido a <br />
+            <span style="color: hsl(218, 81%, 75%)">Nuestra Plataforma</span>
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            Inicie sesión para separar una cita. Si aún no tiene una cuenta, regístrese fácilmente.
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <!-- Email -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" formControlName="email" class="form-control" />
+                  <label class="form-label" for="email">Correo electrónico</label>
+                  <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger small">
+                    Ingrese un correo válido.
+                  </div>
+                </div>
+  
+                <!-- Password -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" formControlName="password" class="form-control" />
+                  <label class="form-label" for="password">Contraseña</label>
+                  <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger small">
+                    La contraseña es obligatoria.
+                  </div>
+                </div>
+  
+                <!-- Mensaje de error general -->
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                  {{ errorMessage }}
+                </div>
+  
+                <!-- Botones -->
+                <div class="d-flex justify-content-start gap-3">
+                  <button type="submit" class="btn btn-primary mb-4" [disabled]="loginForm.invalid">
+                    Iniciar Sesión
+                  </button>
+                  <a href="/usuarios" class="btn btn-outline-primary mb-4">
+                    Registrarse
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

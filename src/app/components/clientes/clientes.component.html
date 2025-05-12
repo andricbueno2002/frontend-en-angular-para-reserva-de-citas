@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Lista de Clientes</h2>
+  
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col" *ngFor="let cliente of clientes">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ cliente.nombre }} {{ cliente.aPaterno }} {{ cliente.aMaterno }}
+            </h5>
+            <p class="card-text">
+              <strong>Dirección:</strong> {{ cliente.direccion }}<br />
+              <strong>ID:</strong> {{ cliente.idCliente }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1></h1>
+  </div>
+  
